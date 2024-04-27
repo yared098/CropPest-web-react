@@ -1,0 +1,23 @@
+/* Assuming these styles are added to your main CSS or a specific module for HistoryPage */
+.history-container {
+    padding: 20px;
+}
+
+.history-entry {
+    margin: 10px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.history-title {
+    font-size: 18px;
+    color: #333;
+}
+
+.history-description,
+.history-date {
+    font-size: 16px;
+    color: #666;
+}
