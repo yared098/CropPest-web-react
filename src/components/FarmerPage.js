@@ -9,6 +9,15 @@ function FarmerPage() {
     { name: 'Jill Biden', location: 'Westwood', farmerId: 'F004', status: 'Pending' },
   ]);
 
+  // Placeholder functions for button actions
+  const viewProfile = (farmerId) => {
+    alert(`Viewing profile for farmer ID: ${farmerId}`);
+  };
+
+  const checkStatus = (farmerId) => {
+    alert(`Checking status for farmer ID: ${farmerId}`);
+  };
+
   return (
     <div className="farmer-dashboard">
       <h1>Farmer's Dashboard</h1>
@@ -21,6 +30,7 @@ function FarmerPage() {
               <th>Location</th>
               <th>Farm ID</th>
               <th>Status</th>
+              <th>Actions</th> {/* New column for actions */}
             </tr>
           </thead>
           <tbody>
@@ -30,6 +40,10 @@ function FarmerPage() {
                 <td>{farmer.location}</td>
                 <td>{farmer.farmerId}</td>
                 <td>{farmer.status}</td>
+                <td>
+                  <button onClick={() => viewProfile(farmer.farmerId)}>View Profile</button>
+                  <button onClick={() => checkStatus(farmer.farmerId)}>Check Status</button>
+                </td>
               </tr>
             ))}
           </tbody>

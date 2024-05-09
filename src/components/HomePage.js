@@ -25,6 +25,9 @@ import './HomePage.css';
 import HistoryPage from './HistoryPage';
 import FarmerPage from './FarmerPage';
 import AddNews from './AddNews';
+import HomeView from './HomeView';
+import AddReportForm from './AddReportForm';
+import ProfilePage from './ProfilePage';
 
 function HomePage() {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -81,13 +84,15 @@ function HomePage() {
   const renderPageContent = () => {
     switch (selectedPage) {
       case 'home':
-        return <div>Home content or another component here</div>;
+        return <ProfilePage/>
       case 'farmer':
         return <FarmerPage />;
       case 'history':
         return <HistoryPage />;
+        case 'Report':
+          return <AddReportForm/>
       case 'news':
-        return <AddNews/>
+        return <AddNews/> 
       default:
         return <div>Select a page</div>;
     }
@@ -120,11 +125,15 @@ function HomePage() {
           </ListItem>
           <ListItem button onClick={() => setSelectedPage('news')}>
             <ListItemIcon><HistoryIcon /></ListItemIcon>
-            <ListItemText primary="news" />
+            <ListItemText primary="Add news" />
           </ListItem>
-          <ListItem button onClick={() => setSelectedPage('news')}>
+          <ListItem button onClick={() => setSelectedPage('homeview')}>
             <ListItemIcon><HistoryIcon /></ListItemIcon>
             <ListItemText primary="homeview" />
+          </ListItem>
+          <ListItem button onClick={() => setSelectedPage('Report')}>
+            <ListItemIcon><HistoryIcon /></ListItemIcon>
+            <ListItemText primary="Add Report" />
           </ListItem>
           
         </List>

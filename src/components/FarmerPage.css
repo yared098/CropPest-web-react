@@ -35,4 +35,13 @@
     border: 1px solid #ccc;
     margin-top: 20px;
   }
+  .farmers-list button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .farmers-list button:last-child {
+    margin-right: 0;
+  }
   

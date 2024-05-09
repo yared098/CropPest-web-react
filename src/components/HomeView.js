@@ -1,7 +1,12 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import Chart from 'chart.js/auto'; // Importing 'chart.js/auto' automatically registers all controllers, elements, scales and plugins.
-import './HomeView.css';
+// import './HomeView.css';
+import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+
+// Manually register the components you need
+Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+
 
 const HomeView = () => {
     const data = {
@@ -45,7 +50,7 @@ const HomeView = () => {
         <div>
             <h1>Dashboard</h1>
             <div>
-                <h2>crop Ai Overview</h2>
+                <h2>Crop Ai Overview</h2>
                 <Bar data={data} options={options} />
             </div>
         </div>
