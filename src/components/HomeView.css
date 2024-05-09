@@ -1,0 +1,34 @@
+/* HomeView.css */
+.App {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+div {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Chart specific styling */
+canvas {
+    padding: 10px;
+    height: 400px !important;
+    width: 100% !important;
+}

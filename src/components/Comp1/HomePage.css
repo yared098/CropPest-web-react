@@ -1,0 +1,40 @@
+/* HomePage.css */
+.App {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .mainContent {
+    margin-top: 64px; /* Adjust based on AppBar height */
+    padding: 20px;
+  }
+  
+  .drawerPaper {
+    width: 240px;
+  }
+  
+  .drawerHeader {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    justify-content: flex-end;
+    min-height: 64px;
+  }
+  
+  .listItemIcon {
+    min-width: 50px; /* Ensures alignment of icons */
+  }
+  
+  .listItemText {
+    color: #333; /* Dark grey color for list item text */
+  }
+  
+  .appBar {
+    z-index: 1201; /* Ensures AppBar is above the Drawer */
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  

@@ -1,0 +1,28 @@
+.news-history {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 600px;  /* Controls the maximum width for better readability */
+    background-color: #fff;  /* Uses a white background for clarity */
+    border-radius: 8px;  /* Adds rounded corners for a softer, modern look */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Subtle shadow to lift the component off the page */
+    text-align: left;  /* Aligns text to the left for traditional reading flow */
+    color: #333;  /* Dark grey color for text to ensure good readability */
+}
+
+.news-history h2 {
+    font-size: 22px;  /* Larger font size for the header */
+    color: #2a7f62;  /* Custom greenish color for headers, providing a unique look */
+    margin-bottom: 15px;  /* Spacing below the header to visually separate it from content */
+}
+
+.news-history p {
+    font-size: 16px;  /* Standard font size for content */
+    line-height: 1.6;  /* Adequate line spacing for better readability */
+    margin-bottom: 10px;  /* Space between paragraphs to distinguish individual news items */
+    border-bottom: 1px solid #eee;  /* Light grey border at the bottom of each item */
+    padding-bottom: 10px;  /* Padding below each item before the border */
+}
+
+.news-history p:last-child {
+    border-bottom: none;  /* Removes the border from the last item to avoid a hanging line */
+}

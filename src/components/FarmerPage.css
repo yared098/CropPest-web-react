@@ -1,0 +1,38 @@
+.farmer-dashboard {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    color: #333;
+  }
+  
+  .farmer-dashboard h1 {
+    color: #4CAF50;
+  }
+  
+  .farmers-list {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+  }
+  
+  .farmers-list th, .farmers-list td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .farmers-list th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .farmers-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .farmers-scrollbox {
+    overflow-y: auto;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  

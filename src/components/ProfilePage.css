@@ -1,0 +1,36 @@
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%; /* Set a max width for the entire profile page */
+    margin: auto;
+    padding: 20px;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px; /* Adds space between each component */
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Component specific styles */
+.crop-status, .dashboard, .news-history {
+    flex: 1;  /* Each child takes equal space */
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    background-color: white;
+ /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+    min-height: 200px; /* Optional: ensures that all components have at least the same height */
+}

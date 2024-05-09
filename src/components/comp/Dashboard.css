@@ -1,0 +1,22 @@
+.dashboard {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 600px;  /* Limits the width to ensure the content is readable */
+    background-color: #fff;  /* White background for clarity */
+    border-radius: 8px;  /* Rounded corners for a softer look */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Subtle shadow for depth */
+    text-align: center;  /* Center-aligns all text for consistency */
+}
+
+.dashboard h2 {
+    color: #333;  /* Dark color for heading for better readability */
+    font-size: 24px;  /* Larger font size for heading */
+    margin-bottom: 15px;  /* Space below the heading */
+}
+
+.dashboard p {
+    color: #666;  /* Lighter color for paragraph text */
+    font-size: 16px;  /* Standard font size for content */
+    line-height: 1.5;  /* Line height for better readability */
+    margin: 10px 0;  /* Vertical spacing for paragraphs */
+}

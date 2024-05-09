@@ -1,35 +1,54 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
 import { collection, getDocs } from 'firebase/firestore';
+import { List, ListItem, ListItemText, Typography } from '@mui/material';
 import './HistoryPage.css';
 
 function HistoryPage() {
-    const [history, setHistory] = useState([]);
+    const [news, setNews] = useState([]);
 
     useEffect(() => {
-        const fetchHistory = async () => {
-            const historyCollectionRef = collection(db, "history"); // Adjust "history" to your specific collection
-            const data = await getDocs(historyCollectionRef);
-            setHistory(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        const fetchNews = async () => {
+            const newsCollectionRef = collection(db, "news");
+            const data = await getDocs(newsCollectionRef);
+            setNews(data.docs.map((doc) => ({
+                ...doc.data(),
+                id: doc.id,
+                datetime: doc.data().datetime ? new Date(doc.data().datetime.seconds * 1000).toLocaleString() : "Not provided"
+            })));
         };
 
-        fetchHistory();
+        fetchNews();
     }, []);
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>History</h1>
-            <div>
-                {history.length > 0 ? (
-                    history.map((entry) => (
-                        <div key={entry.id} style={{ margin: '10px', padding: '15px', boxShadow: '0 2px 5px rgba(0,0,0,0.1)' }}>
-                            <h2>{entry.title}</h2>
-                            <p>{entry.description}</p>
-                            <p>Date: {entry.date}</p>
-                        </div>
-                    ))
+        <div className="history-page">
+            <div className="scroll-container">
+                {news.length > 0 ? (
+                    <List>
+                        {news.map((item) => (
+                            <ListItem key={item.id} divider>
+                                <ListItemText
+                                    primary={item.title}
+                                    secondary={
+                                        <>
+                                            <Typography component="span" color="text.primary">
+                                                Location: {item.location}
+                                            </Typography>
+                                            {' — '}
+                                            {item.body}
+                                            {' — '} 
+                                            Date and Time: {item.datetime}
+                                            {' — '}
+                                            Crop Type: {item.cropType}
+                                        </>
+                                    }
+                                />
+                            </ListItem>
+                        ))}
+                    </List>
                 ) : (
-                    <p>No history entries found.</p>
+                    <Typography className="no-news">No news found.</Typography>
                 )}
             </div>
         </div>

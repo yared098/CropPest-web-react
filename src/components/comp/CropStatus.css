@@ -1,0 +1,23 @@
+.crop-status {
+    padding: 2px;
+    margin: 1px auto;
+    max-width: 600px;  /* Optimal width for readability */
+    background-color: #fff;  /* Clean white background */
+    border-radius: 8px;  /* Smooth rounded corners for modern look */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Subtle shadow for depth effect */
+    text-align: center;  /* Center alignment for text for a tidy appearance */
+    color: #333;  /* Dark gray for text for better readability */
+}
+
+.crop-status h2 {
+    font-size: 22px;  /* Slightly larger font size for section titles */
+    color: #2a7f62;  /* Custom color for headers */
+    margin-bottom: 15px;  /* Space below the header to separate from content */
+}
+
+.crop-status p {
+    font-size: 16px;  /* Standard text size */
+    line-height: 1.6;  /* Spacing between lines */
+    margin: 8px 0;  /* Vertical spacing between paragraphs */
+    color: #555;  /* Medium gray for paragraph text */
+}

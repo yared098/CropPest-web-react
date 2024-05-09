@@ -4,12 +4,14 @@ import HomePage from './components/HomePage';
 import AddNews from './components/AddNews'; // Ensure this import is correct
 import FarmerPage from './components/FarmerPage';
 import HistoryPage from './components/HistoryPage';
+import Login from "./components/Login";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path='/login' element={<Login/>}/>
         <Route path="/home" element={<HomePage />} />
         <Route path="/add-news" element={<AddNews />} />
         <Route path="/farmer" element={<FarmerPage />} />
