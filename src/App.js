@@ -5,6 +5,7 @@ import AddNews from './components/AddNews'; // Ensure this import is correct
 import FarmerPage from './components/FarmerPage';
 import HistoryPage from './components/HistoryPage';
 import Login from "./components/Login";
+import Signup from './components/signup';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/add-news" element={<AddNews />} />
         <Route path="/farmer" element={<FarmerPage />} />
         <Route path="/history" element={<HistoryPage />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );

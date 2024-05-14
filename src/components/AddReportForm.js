@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './AddReportForm.css';
 
 const AddReportForm = () => {
@@ -39,49 +40,65 @@ const AddReportForm = () => {
     };
 
     return (
-        <div className="form-container">
-            <form onSubmit={handleSubmit}>
-                <h1>Add Report</h1>
-                <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Title"
-                    required
-                />
-                <textarea
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Description"
-                    required
-                />
-                <input
-                    type="datetime-local"
-                    value={dateTime}
-                    onChange={(e) => setDateTime(e.target.value)}
-                    required
-                />
-                <button type="submit">Add Report</button>
-            </form>
-            <div>
-    <h2>All Reports</h2>
-    <div className="report-container">
-        {reports.map(report => (
-            <div className="report-card" key={report.id}>
-                <div className="report-field">
-                    <strong>Title:</strong> <span>{report.title}</span>
-                </div>
-                <div className="report-field">
-                    <strong>Description:</strong> <span>{report.description}</span>
-                </div>
-                <div className="report-field">
-                    <strong>Date:</strong> <span>{report.dateTime?.toLocaleString()}</span>
+        <div className="container mt-5">
+            <div className="card">
+                <div className="card-body">
+                    <form onSubmit={handleSubmit}>
+                        <h1 className="card-title">Add Report</h1>
+                        <div className="mb-3">
+                            <label htmlFor="title" className="form-label">Title</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="title"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                                placeholder="Title"
+                                required
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="description" className="form-label">Description</label>
+                            <textarea
+                                className="form-control"
+                                id="description"
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                placeholder="Description"
+                                required
+                            ></textarea>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="dateTime" className="form-label">Date and Time</label>
+                            <input
+                                type="datetime-local"
+                                className="form-control"
+                                id="dateTime"
+                                value={dateTime}
+                                onChange={(e) => setDateTime(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Add Report</button>
+                    </form>
                 </div>
             </div>
-        ))}
-    </div>
-</div>
-
+            <div className="mt-5">
+                <h2>All Reports</h2>
+                <div className="row overflow-auto" style={{ maxHeight: '400px' }}>
+                    {reports.map(report => (
+                        <div className="col-md-4 mb-3" key={report.id}>
+                            <div className="card">
+                                <div className="card-body">
+                                    <div className="card-title"><strong>Title:</strong> {report.title}</div>
+                                    <div className="card-text"><strong>Description:</strong> {report.description}</div>
+                                    <div className="card-text"><strong>Date:</strong> {new Date(report.dateTime?.toDate()).toLocaleString()}</div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };

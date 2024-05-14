@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
 import { collection, getDocs } from 'firebase/firestore';
-import { List, ListItem, ListItemText, Typography } from '@mui/material';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './HistoryPage.css';
 
 function HistoryPage() {
@@ -22,34 +22,36 @@ function HistoryPage() {
     }, []);
 
     return (
-        <div className="history-page">
-            <div className="scroll-container">
-                {news.length > 0 ? (
-                    <List>
-                        {news.map((item) => (
-                            <ListItem key={item.id} divider>
-                                <ListItemText
-                                    primary={item.title}
-                                    secondary={
-                                        <>
-                                            <Typography component="span" color="text.primary">
-                                                Location: {item.location}
-                                            </Typography>
-                                            {' — '}
+        <div className="container mt-5">
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="card-title">News History</h2>
+                    <div className="scroll-container">
+                        {news.length > 0 ? (
+                            <ul className="list-group">
+                                {news.map((item) => (
+                                    <li key={item.id} className="list-group-item">
+                                        <h5 className="mb-1">{item.title}</h5>
+                                        <p className="mb-1">
+                                            <strong>Location:</strong> {item.location}
+                                        </p>
+                                        <p className="mb-1">
                                             {item.body}
-                                            {' — '} 
-                                            Date and Time: {item.datetime}
-                                            {' — '}
-                                            Crop Type: {item.cropType}
-                                        </>
-                                    }
-                                />
-                            </ListItem>
-                        ))}
-                    </List>
-                ) : (
-                    <Typography className="no-news">No news found.</Typography>
-                )}
+                                        </p>
+                                        <p className="mb-1">
+                                            <strong>Date and Time:</strong> {item.datetime}
+                                        </p>
+                                        <p className="mb-1">
+                                            <strong>Crop Type:</strong> {item.cropType}
+                                        </p>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p className="text-center">No news found.</p>
+                        )}
+                    </div>
+                </div>
             </div>
         </div>
     );

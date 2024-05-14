@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './FarmerPage.css'; // Ensure the path matches where your CSS file is saved
 
 function FarmerPage() {
@@ -19,18 +20,18 @@ function FarmerPage() {
   };
 
   return (
-    <div className="farmer-dashboard">
-      <h1>Farmer's Dashboard</h1>
+    <div className="container farmer-dashboard">
+      <h1 className="my-4">Farmer's Dashboard</h1>
       <p>Welcome to your dashboard. Here you'll find the latest updates and tools to help you manage your farming activities.</p>
       <div className="farmers-scrollbox">
-        <table className="farmers-list">
+        <table className="table table-striped farmers-list">
           <thead>
             <tr>
               <th>Name</th>
               <th>Location</th>
               <th>Farm ID</th>
               <th>Status</th>
-              <th>Actions</th> {/* New column for actions */}
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -41,8 +42,8 @@ function FarmerPage() {
                 <td>{farmer.farmerId}</td>
                 <td>{farmer.status}</td>
                 <td>
-                  <button onClick={() => viewProfile(farmer.farmerId)}>View Profile</button>
-                  <button onClick={() => checkStatus(farmer.farmerId)}>Check Status</button>
+                  <button className="btn btn-primary btn-sm me-2" onClick={() => viewProfile(farmer.farmerId)}>View Profile</button>
+                  <button className="btn btn-secondary btn-sm" onClick={() => checkStatus(farmer.farmerId)}>Check Status</button>
                 </td>
               </tr>
             ))}

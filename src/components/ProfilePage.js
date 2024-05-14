@@ -8,7 +8,7 @@ import './ProfilePage.css'; // General styling for the Profile Page
 const ProfilePage = () => {
     return (
         <div className="profile-page">
-            <h1>User Profile</h1>
+            <h1>Crop paste Dashboard</h1>
             <div className="grid-container">
                 <CropStatus />
                 <Dashboard />
